@@ -1,0 +1,12 @@
+{
+    "name": "mmarconi/my-proyect",
+    "type": "library",
+    "require": {
+        "nesbot/carbon": "^2.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "MixPlay\\Math\\": "src/"
+        }
+    }
+}

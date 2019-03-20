@@ -1,0 +1,180 @@
+Herencia
+
+DRY : Don't Repeat Yourself
+
+KISS: Keep It So Symple
+
+
+
+Single Responsability
+Open Closed
+Liskov Substitution: devuelve algo del mismo tipo (Inteface)
+Interface Segregation
+Dependency Inversion
+
+
+Interfaz/Protocol/Contract : Solamente defino la firma del metodo
+
+Throwable (interface)
+	Exception (clase que implementa la interface throwable)
+		getMessage()
+		getCode()
+		getLine()
+
+Interface
+	Clase (padre)
+		Clase (hijo)
+
+CalculatorInterface
+	Calculator
+		Astronomic
+		Scientific
+		Programmer
+
+Patron de diseño Singleton
+Patron de diseño Facade
+Abstract Factory
+
+Phalcon 4.0 (docs.phalconphp.com/4.0/en/)
+
+El cliente va a una tienda y recorre las gondolas y busca productos para agregar al carro
+El cliente tiene un limite de $5000.
+Una vez que el cliente decide comprar, el carrito se vacia y el cliente tiene menos dinero.
+
+Cliente (limite accion del cliente)
+	Carro
+	Dinero
+	recorre Tienda
+		busca en la Gondola []
+			Producto []
+				
+QueryString
+
+GET mixplay.com/	index()
+GET 	show()
+POST 	create()
+PATCH 	edit()
+PUT 	replace()
+DELETE 	delete()
+
+
+
+Abstraccion
+
+Cliente | HTTP -> API REST -> PHP -> PDO (extension) -> DB
+
+PBO (conexiones, ejecutar operaciones)
+PBOStatement (preparar consultas)
+PBOExtention (extension del Exception)
+
+
+Create / Insert / POST
+Read / Select (condicional) / GET
+Update / Update / PATCH - PUT
+Delete / Delete / Delete
+List / Select (multiple) / GET
+
+
+Routing
+Validacion
+Comunicacion HTTP (Request, Response)
+Datos (DB, Cache)
+Filesystem (lee, copiar, mover archivos / directorios)
+Herramientas de desarrollo (Debug, Log, Testing)
+Autenticacion (login) quien soy?
+Autorizacion (permisos) que puedo hacer?
+Validacion
+Templates (Generadores de codigo HTML)
+
+
+Modelo
+	Datos (DB, Cache)
+	Filesystem (Leer, copiar, mover archivo / directorios)
+Vista
+	Templates
+Controlador
+	Autenticacion
+	Autorizacion
+	Validacion
+	Routing
+	Comunicacion HTTP (Request, Response)
+	Session
+
+REST = Representational State Transfer = Transferencia de estado representacional
+API REST -> Cliente === APP (Json)
+Las aplicaciones se autentican en una API REST a atraves de un token
+EL token es un codigo que mayormente no cambia
+Las aplicaciones demoran microsegundos en enviar y recibir datos
+Estas aplicaciones no tienen Session
+
+APP WEB -> Cliente === Humano (HTML+CSS)
+Los humanos se autentica en una WEB a traves de credenciales (usuario y contraseña)
+Los humanos tardamos en interactuar con una aplicacion
+Estas aplicaciones tienen Session
+
+
+ORM = Object Relational Mapper
+
+
+---------------------------------------------------------
+
+el objeto es una instancia de la clase
+
+spl_autoload_register(function($class_name){
+});
+
+constructor: crea una instancia del objeto, puede estar en clases
+
+visivilidad: public, protected, private. pueden ser propiedades o atributos
+
+herencia: es cuando la clase hijo hereda las propiedades de la clase padre (implement y extend), (invoca a la clase padre)
+(si es un)
+parent::$id;
+
+operador de resolucion de ambito: '$this->' , ' :: '
+'$this->' : cuando tenemos objetos y ese valor pertenece a las instancias
+' :: ' : no esta en la instancia, esta en la clase, de mayor precedencia. 
+self::IVA; //Habla de la clase en si misma
+
+static: no necesita una instancia para poder usarlo
+private static $x;
+Factory::getCalculator(); //llamo a la clase y llamo al metodo, no se puede usar '$this->', propiedad estatica
+{
+}
+
+interfaces: la firma de varios metodos
+interface User
+{
+	public function setName(string $name);
+	public function getName();
+}
+
+una clase puede tener un constructor privado (en el caso de Factory) , 
+(no puedo devolver nada que yo le diga, va a devolver algo por defecto)
+
+
+Simple: una clase debe tener una funcionalidad
+Open / Closed: abierta para extension, cerrada para modificacion ( final class 'name')
+Liskov Subtitution: devuelve algo del mismo tipo (interface)
+Interface Segregation
+Dependency Inversion: dependo de las abstraciones y no de las implementaciones 
+
+Metodos Magicos: vienen predefinidos por PHP, mayormente responden ante usos especificos que no son habituales
+construct
+invoke
+to string
+
+$user = new User;
+$user->getName(); //__contruct // si usa el echo invoca a toString
+
+$controller = new Controller;
+$controller(); //__invoke
+
+echo $user; 
+
+
+Trait = Aspecto / Rasgo
+
+clases - se heredan
+interfaces - se implementan
+traits - se importan

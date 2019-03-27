@@ -1,3 +1,7 @@
+phpdocumentor
+phpmanual
+
+
 Herencia
 
 DRY : Don't Repeat Yourself
@@ -21,6 +25,8 @@ Throwable (interface)
 		getCode()
 		getLine()
 
+
+RESPONSABLES Y RESPONSABILIDAD
 Interface
 	Clase (padre)
 		Clase (hijo)
@@ -37,6 +43,8 @@ Abstract Factory
 
 Phalcon 4.0 (docs.phalconphp.com/4.0/en/)
 
+-----------------------------------------
+
 El cliente va a una tienda y recorre las gondolas y busca productos para agregar al carro
 El cliente tiene un limite de $5000.
 Una vez que el cliente decide comprar, el carrito se vacia y el cliente tiene menos dinero.
@@ -48,6 +56,8 @@ Cliente (limite accion del cliente)
 		busca en la Gondola []
 			Producto []
 				
+-------------------------------------------------
+
 QueryString
 
 GET mixplay.com/	index()
@@ -162,7 +172,7 @@ Dependency Inversion: dependo de las abstraciones y no de las implementaciones
 Metodos Magicos: vienen predefinidos por PHP, mayormente responden ante usos especificos que no son habituales
 construct
 invoke
-to string
+toString
 
 $user = new User;
 $user->getName(); //__contruct // si usa el echo invoca a toString
@@ -178,3 +188,91 @@ Trait = Aspecto / Rasgo
 clases - se heredan
 interfaces - se implementan
 traits - se importan
+
+
+
+schema.org: entidad dentro de una gerarquia
+
+
+User
+	email
+	clave
+	recordarme dn este equipo
+
+--------------------------------------------
+
+Variables super globables (todas son arrays)
+
+$_POST / $_GET / $_REQUEST / $_FILES / $_SESSION / $_SERVER
+
+$_SERVER ['REMOTE_ADDR']
+
+REQUEST: leo los dados de GET y de POST 
+GET: leo los datos de GET
+POST: leo los datos de POST
+FILE: Tienen datos que escribe o provee el usuario
+SESSION: Datos que escribe el script para mantener informacion
+SERVER: Datos que escribe PHP acerca del
+
+
+------------------------------------------------------
+
+una clase que se va a encargar de manejar la variable POST 
+una clase que se llame Request, esa clase va a tener acceso a la variable POST
+Request getEmail, Request getPassword
+
+---------------------------------------------------------
+
+
+DESARROLLOS INDEPENDIENTES (agnosticos)
+COMPOSER // GIT (dependencia de php // desarollo )
+
+1. Crear un directorio 
+	mkdir nombre-del-directorio
+2. Ingresar al directorio 
+	cd nombre-del-directorio
+3. Inicializar el repositorio
+	git init
+4. Crear el gitignore
+	touch .gitignore
+5. Crear una rama e ingresar
+	git branch nombre-del-branch
+	git checkout nombre-del-branch
+6. Empezar a trabajar en ese espacio
+	mkdir src
+	composer init
+	composer update
+
+--------------------------------------------------------------------------------------------------------------------------
+
+instancia se construye el objeto
+php corre en el servidor
+
+
+
+TDD: Test antes del codigo
+JWToken
+Automatizacion
+Base de datos no relacionales
+Librerias de colas: tareas a realizar
+arquitectura mvp mvc mvvm
+statless: tu aplicacion no guarde en un estado local
+
+
+MVC: Modelo Vista Controlador
+Modelo: logica de negocios. Clases y metodos que se comunican directamente con la base de datos.
+Vista: es la encargada de mostrarle la informacion al usuario
+Controlador: intermediario entre el modelo y la vista. Se encarga de las interacciones del usuario en la vista,
+pide los datos al modelo y los devuelve de nuevo a la vista para que esta los muestre el usuario. (clases, metodos y datos del formulario)
+
+
+
+
+
+
+
+
+
+
+
+

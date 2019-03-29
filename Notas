@@ -270,6 +270,35 @@ pide los datos al modelo y los devuelve de nuevo a la vista para que esta los mu
 
 
 
+$ar = array();
+$ar[] = array(5,6,7);
+$ar[] = array(11,12,20);
+$ar[] = array(0,0,0);
+
+foreach($ar as $k->$item)
+//empty??
+
+tateti: array de array
+booleanos: X=true, O=false
+----------
+funcion rand para random
+for para posiciones aleatorias
+-----------------
+comprobar si hay algo
+verificar las posiciones para hacer tateti
+verificar si gano y que no este lleno (usando while)
+sacar numeros mientras que nadie gane
+imprimir tablero y verificar si gano
+
+tateti posicion, tateti random
+
+
+patrones de diseño: estructurales creacionales relacionales
+pasaje por referencia o por copia
+
+
+
+
 
 
 
